@@ -217,7 +217,7 @@ class TextInputModal(discord.ui.Modal):
 
 
 # --- Commands ---
-@app_commands.command(name="status", description="View the current Allies and Enemies", guilds=True, dms=True, private_channels=True)
+@app_commands.command(name="status", description="View the current Allies and Enemies", dms=True, private_channels=True)
 async def status_command(interaction: discord.Interaction):
     view = StatusView(bot)
     embed = discord.Embed(
@@ -228,7 +228,7 @@ async def status_command(interaction: discord.Interaction):
     await interaction.response.send_message(embed=embed, view=view, ephemeral=True)
 
 
-@app_commands.command(name="edit_status", description="Edit the Allies and Enemies (Luna only)", guilds=True, dms=True, private_channels=True)
+@app_commands.command(name="edit_status", description="Edit the Allies and Enemies (Luna only)", dms=True, private_channels=True)
 async def edit_status_command(interaction: discord.Interaction):
     if interaction.user.id != ALLOWED_USER_ID:
         await interaction.response.send_message("❌ You are not allowed to edit the status.", ephemeral=True)
