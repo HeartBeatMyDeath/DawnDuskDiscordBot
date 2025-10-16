@@ -244,6 +244,6 @@ async def edit_status(interaction: discord.Interaction):
 
 
 # ---------- Run ----------
-webserver.keepalive()
+webserver.keep_alive()
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
 
